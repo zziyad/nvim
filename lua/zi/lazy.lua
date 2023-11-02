@@ -12,6 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-require("lazy").setup({import = "zi.plugins"})
+require("lazy").setup({import = "zi.plugins"}, {
+  install = {
+    colorscheme = { "nightfly" },
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
+})
 
 
