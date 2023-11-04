@@ -16,9 +16,20 @@ require("lazy").setup({import = "zi.plugins"}, {
   install = {
     colorscheme = { "nightfly" },
   },
+
   checker = {
     enabled = true,
     notify = false,
+  },
+
+  ui = {
+    icons = {
+      ft = "",
+      lazy = "󰂠 ",
+      plugin = "󰏗",
+      loaded = "",
+      not_loaded = "",
+    },
   },
   change_detection = {
     notify = false,
