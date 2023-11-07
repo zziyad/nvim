@@ -11,10 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
-require("lazy").setup({import = "zi.plugins"}, {
+require("lazy").setup({
+  { import = "zi.plugins" },
+  { import = "zi.plugins.lsp" },
+}, {
   install = {
-    colorscheme = { "nightfly" },
+    colorscheme = { "guvbox" },
   },
 
   checker = {
@@ -35,5 +37,3 @@ require("lazy").setup({import = "zi.plugins"}, {
     notify = false,
   },
 })
-
-
