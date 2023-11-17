@@ -1,8 +1,8 @@
 return {
-  'nvimdev/dashboard-nvim',
-  event = 'VimEnter',
+  "nvimdev/dashboard-nvim",
+  event = "VimEnter",
   config = function()
-    require('dashboard').setup {
+    require("dashboard").setup({
       config = {
         header = {
           "           ▄ ▄                   ",
@@ -16,12 +16,13 @@ return {
           " █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ ▄ ▄▄▄▄▄▄▄█   ",
           "                                 ",
         },
-        
+
         shortcut = {
-          { desc = '  Find File    ', group = '@property', action = 'Telescope find_files', key = 'f' },
+          { desc = "  Find File    ", group = "@property", action = "Telescope find_files", key = "f" },
+          { desc = "󰚰  Update Plugins    ", group = "@property", action = "Lazy update", key = "u" },
         },
-      }
-    }
+      },
+    })
   end,
-  dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  dependencies = { { "nvim-tree/nvim-web-devicons" } },
 }

@@ -35,6 +35,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- clear search highlite after search
 keymap("n", "<C-o>", ":noh<CR>", opts)
 
+keymap("n", "<gb>", "<C-t>", opts)
+
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -66,3 +68,6 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- Map F6 to open terminal in Vim directory
+keymap("n", "tt", ":let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>", term_opts)
