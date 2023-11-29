@@ -37,6 +37,17 @@ local options = {
 
 vim.opt.shortmess:append("c")
 
+vim.opt.fillchars = {
+  vert = "│",
+  fold = "⠀",
+  eob = " ", -- suppress ~ at EndOfBuffer
+  -- diff = "⣿", -- alternatives = ⣿ ░ ─ ╱
+  msgsep = "‾",
+  foldopen = "▾",
+  foldsep = "│",
+  foldclose = "▸",
+}
+
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
