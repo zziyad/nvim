@@ -11,7 +11,10 @@ return {
 
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver" },
+        -- ensure_installed = { "lua_ls", "tsserver" },
+        opts = {
+          auto_install = true,
+        },
       })
     end,
   },
@@ -19,11 +22,11 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local lspconfig = require("lspconfig")
 
       lspconfig.tsserver.setup({
-        --  capabilities = capabilities
+        capabilities = capabilities
       })
 
       lspconfig.eslint.setup({
@@ -34,15 +37,8 @@ return {
       })
 
       lspconfig.lua_ls.setup({
-        --capabilities = capabilities
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = "Replace",
-            },
-          },
-        },
-      })
+        capabilities = capabilities,
+     })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
